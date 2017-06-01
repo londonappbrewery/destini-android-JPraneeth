@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
     int b1Index = 0;
     int b2Index = 0;
     int nextstory;
-    int help;
+
     private int text, text1;
-    int capture = 0;
+
 
 
     private NewStory[] mNewStories = new NewStory[]{
@@ -65,14 +65,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        if (savedInstanceState != null) {
-
-            nextstory = savedInstanceState.getInt("Storykey");
-            mIndex = savedInstanceState.getInt("Indexkey");
-        } else {
-            nextstory = 0;
-            mIndex = 0;
-        }
+       
 
         button_top = (Button) findViewById(R.id.buttonTop);
         button_bottom = (Button) findViewById(R.id.buttonBottom);
@@ -177,6 +170,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onSaveInstanceState(Bundle outState){//values stored in Bundle r stored in key value pair
 
+        super.onSaveInstanceState(outState);
+        outState.putInt("Scorekey",nextstory);
+        outState.putInt("Indexkey",mIndex);
+    }
 
 }
