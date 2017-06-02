@@ -65,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        //For screen rotation go to manifest.xml file there in activity tag we have the attribute
+        // android:configchanges=".." is used to handle the configuration and screen rotation
+
 
         button_top = (Button) findViewById(R.id.buttonTop);
         button_bottom = (Button) findViewById(R.id.buttonBottom);
@@ -170,11 +172,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onSaveInstanceState(Bundle outState){//values stored in Bundle r stored in key value pair
 
-        super.onSaveInstanceState(outState);
-        outState.putInt("Scorekey",nextstory);
-        outState.putInt("Indexkey",mIndex);
-    }
 
 }
